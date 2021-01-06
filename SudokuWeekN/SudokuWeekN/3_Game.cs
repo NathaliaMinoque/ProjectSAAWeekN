@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace SudokuWeekN
 {
-    public partial class Form1 : Form
+    public partial class FormGame : Form
     {
-        public Form1()
+        public FormGame()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormGame_Load(object sender, EventArgs e)
         {
             //Ini codingan bikin textbox array
             var soal = new TextBox[10, 10];
@@ -35,6 +35,10 @@ namespace SudokuWeekN
                     soal[i, j] = tbox;
                 }
             }
+
+
+            //MessageBox.Show("WARNING!! Please enter number between 1 and 9");
+
         }
     }
 }

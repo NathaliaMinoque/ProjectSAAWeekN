@@ -46,16 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="2_Level.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="2_Level.Designer.cs">
+      <DependentUpon>2_Level.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_Start.Designer.cs">
+      <DependentUpon>1_Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3_Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3_Game.Designer.cs">
+      <DependentUpon>3_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4_Congrats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4_Congrats.Designer.cs">
+      <DependentUpon>4_Congrats.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="2_Level.resx">
+      <DependentUpon>2_Level.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_Start.resx">
+      <DependentUpon>1_Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3_Game.resx">
+      <DependentUpon>3_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4_Congrats.resx">
+      <DependentUpon>4_Congrats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

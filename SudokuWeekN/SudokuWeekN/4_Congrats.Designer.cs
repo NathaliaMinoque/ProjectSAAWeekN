@@ -1,7 +1,7 @@
 ﻿
 namespace SudokuWeekN
 {
-    partial class Form1
+    partial class FormCongrats
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,13 @@ namespace SudokuWeekN
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // FormCongrats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "FormCongrats";
+            this.Text = "Sudoku Week-N";
             this.ResumeLayout(false);
 
         }
@@ -46,4 +45,3 @@ namespace SudokuWeekN
         #endregion
     }
 }
-
