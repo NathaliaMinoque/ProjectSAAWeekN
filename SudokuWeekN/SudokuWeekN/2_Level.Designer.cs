@@ -29,57 +29,83 @@ namespace SudokuWeekN
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonEasy = new System.Windows.Forms.Button();
-            this.buttonMedium = new System.Windows.Forms.Button();
-            this.buttonHard = new System.Windows.Forms.Button();
+            this.pictureBoxHard = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEasy = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMedium = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLevel = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLevel)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonEasy
+            // pictureBoxHard
             // 
-            this.buttonEasy.Location = new System.Drawing.Point(345, 242);
-            this.buttonEasy.Name = "buttonEasy";
-            this.buttonEasy.Size = new System.Drawing.Size(75, 23);
-            this.buttonEasy.TabIndex = 0;
-            this.buttonEasy.Text = "Easy";
-            this.buttonEasy.UseVisualStyleBackColor = true;
-            this.buttonEasy.Click += new System.EventHandler(this.buttonEasy_Click);
+            this.pictureBoxHard.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_07_03_03_43;
+            this.pictureBoxHard.Location = new System.Drawing.Point(510, 178);
+            this.pictureBoxHard.Name = "pictureBoxHard";
+            this.pictureBoxHard.Size = new System.Drawing.Size(174, 162);
+            this.pictureBoxHard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxHard.TabIndex = 3;
+            this.pictureBoxHard.TabStop = false;
+            this.pictureBoxHard.Click += new System.EventHandler(this.pictureBoxHard_Click);
             // 
-            // buttonMedium
+            // pictureBoxEasy
             // 
-            this.buttonMedium.Location = new System.Drawing.Point(345, 291);
-            this.buttonMedium.Name = "buttonMedium";
-            this.buttonMedium.Size = new System.Drawing.Size(75, 23);
-            this.buttonMedium.TabIndex = 1;
-            this.buttonMedium.Text = "buttonMedium";
-            this.buttonMedium.UseVisualStyleBackColor = true;
+            this.pictureBoxEasy.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_07_03_02_35;
+            this.pictureBoxEasy.Location = new System.Drawing.Point(114, 178);
+            this.pictureBoxEasy.Name = "pictureBoxEasy";
+            this.pictureBoxEasy.Size = new System.Drawing.Size(174, 161);
+            this.pictureBoxEasy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEasy.TabIndex = 2;
+            this.pictureBoxEasy.TabStop = false;
+            this.pictureBoxEasy.Click += new System.EventHandler(this.pictureBoxEasy_Click);
             // 
-            // buttonHard
+            // pictureBoxMedium
             // 
-            this.buttonHard.Location = new System.Drawing.Point(345, 337);
-            this.buttonHard.Name = "buttonHard";
-            this.buttonHard.Size = new System.Drawing.Size(75, 23);
-            this.buttonHard.TabIndex = 2;
-            this.buttonHard.Text = "buttonHard";
-            this.buttonHard.UseVisualStyleBackColor = true;
+            this.pictureBoxMedium.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_07_03_03_15;
+            this.pictureBoxMedium.Location = new System.Drawing.Point(314, 179);
+            this.pictureBoxMedium.Name = "pictureBoxMedium";
+            this.pictureBoxMedium.Size = new System.Drawing.Size(174, 161);
+            this.pictureBoxMedium.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMedium.TabIndex = 1;
+            this.pictureBoxMedium.TabStop = false;
+            this.pictureBoxMedium.Click += new System.EventHandler(this.pictureBoxMedium_Click);
+            // 
+            // pictureBoxLevel
+            // 
+            this.pictureBoxLevel.Image = global::SudokuWeekN.Properties.Resources._20210107_143905_0001;
+            this.pictureBoxLevel.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLevel.Name = "pictureBoxLevel";
+            this.pictureBoxLevel.Size = new System.Drawing.Size(802, 451);
+            this.pictureBoxLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLevel.TabIndex = 0;
+            this.pictureBoxLevel.TabStop = false;
             // 
             // FormLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonHard);
-            this.Controls.Add(this.buttonMedium);
-            this.Controls.Add(this.buttonEasy);
+            this.Controls.Add(this.pictureBoxHard);
+            this.Controls.Add(this.pictureBoxEasy);
+            this.Controls.Add(this.pictureBoxMedium);
+            this.Controls.Add(this.pictureBoxLevel);
             this.Name = "FormLevel";
             this.Text = "Sudoku Week-N";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLevel)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonEasy;
-        private System.Windows.Forms.Button buttonMedium;
-        private System.Windows.Forms.Button buttonHard;
+        private System.Windows.Forms.PictureBox pictureBoxLevel;
+        private System.Windows.Forms.PictureBox pictureBoxMedium;
+        private System.Windows.Forms.PictureBox pictureBoxEasy;
+        private System.Windows.Forms.PictureBox pictureBoxHard;
     }
 }

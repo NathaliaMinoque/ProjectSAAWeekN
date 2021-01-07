@@ -22,7 +22,7 @@ namespace SudokuWeekN
 
         }
 
-        private void buttonStart_Click(object sender, EventArgs e)
+        private void pictureBoxWeekN_Click(object sender, EventArgs e)
         {
             FormLevel f2 = new FormLevel();
             f2.Show();

@@ -29,35 +29,53 @@ namespace SudokuWeekN
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonStart = new System.Windows.Forms.Button();
+            this.pictureBoxWeekN = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStart = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWeekN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStart)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonStart
+            // pictureBoxWeekN
             // 
-            this.buttonStart.Location = new System.Drawing.Point(329, 326);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(119, 45);
-            this.buttonStart.TabIndex = 0;
-            this.buttonStart.Text = "START";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            this.pictureBoxWeekN.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_07_03_06_17;
+            this.pictureBoxWeekN.Location = new System.Drawing.Point(297, 130);
+            this.pictureBoxWeekN.Name = "pictureBoxWeekN";
+            this.pictureBoxWeekN.Size = new System.Drawing.Size(206, 197);
+            this.pictureBoxWeekN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxWeekN.TabIndex = 1;
+            this.pictureBoxWeekN.TabStop = false;
+            this.pictureBoxWeekN.Click += new System.EventHandler(this.pictureBoxWeekN_Click);
+            // 
+            // pictureBoxStart
+            // 
+            this.pictureBoxStart.Image = global::SudokuWeekN.Properties.Resources._20210107_143905_0000__1_;
+            this.pictureBoxStart.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBoxStart.Name = "pictureBoxStart";
+            this.pictureBoxStart.Size = new System.Drawing.Size(805, 454);
+            this.pictureBoxStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStart.TabIndex = 0;
+            this.pictureBoxStart.TabStop = false;
             // 
             // FormOpening
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonStart);
+            this.Controls.Add(this.pictureBoxWeekN);
+            this.Controls.Add(this.pictureBoxStart);
             this.Name = "FormOpening";
             this.Text = "Sudoku Week-N";
             this.Load += new System.EventHandler(this.FormOpening_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWeekN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStart)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.PictureBox pictureBoxStart;
+        private System.Windows.Forms.PictureBox pictureBoxWeekN;
     }
 }
 

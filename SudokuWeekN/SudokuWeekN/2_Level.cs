@@ -17,16 +17,25 @@ namespace SudokuWeekN
             InitializeComponent();
         }
 
-        private void buttonEasy_Click(object sender, EventArgs e)
+        private void pictureBoxEasy_Click(object sender, EventArgs e)
         {
             FormGame f2 = new FormGame();
             f2.Show();
             this.Hide();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBoxMedium_Click(object sender, EventArgs e)
         {
+            FormGame f2 = new FormGame();
+            f2.Show();
+            this.Hide();
+        }
 
+        private void pictureBoxHard_Click(object sender, EventArgs e)
+        {
+            FormGame f2 = new FormGame();
+            f2.Show();
+            this.Hide();
         }
     }
 }

@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +106,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\105601.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20210107_143905_0002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicsArt_01-07-02.35.34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20210107_143905_0001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicsArt_01-07-02.33.38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20210107_143905_0000 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicsArt_12-15-01.00.27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicsArt_01-07-03.03.43.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicsArt_01-07-03.02.35.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicsArt_01-07-03.03.15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicsArt_01-07-03.06.17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20210107_143905_0003.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
