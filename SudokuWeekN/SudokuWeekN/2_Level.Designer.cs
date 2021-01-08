@@ -74,10 +74,11 @@ namespace SudokuWeekN
             // 
             // pictureBoxLevel
             // 
+            this.pictureBoxLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxLevel.Image = global::SudokuWeekN.Properties.Resources._20210107_143905_0001;
             this.pictureBoxLevel.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxLevel.Name = "pictureBoxLevel";
-            this.pictureBoxLevel.Size = new System.Drawing.Size(802, 451);
+            this.pictureBoxLevel.Size = new System.Drawing.Size(800, 450);
             this.pictureBoxLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLevel.TabIndex = 0;
             this.pictureBoxLevel.TabStop = false;

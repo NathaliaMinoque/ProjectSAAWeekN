@@ -48,10 +48,11 @@ namespace SudokuWeekN
             // 
             // pictureBoxStart
             // 
+            this.pictureBoxStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxStart.Image = global::SudokuWeekN.Properties.Resources._20210107_143905_0000__1_;
-            this.pictureBoxStart.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBoxStart.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxStart.Name = "pictureBoxStart";
-            this.pictureBoxStart.Size = new System.Drawing.Size(805, 454);
+            this.pictureBoxStart.Size = new System.Drawing.Size(800, 450);
             this.pictureBoxStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxStart.TabIndex = 0;
             this.pictureBoxStart.TabStop = false;
