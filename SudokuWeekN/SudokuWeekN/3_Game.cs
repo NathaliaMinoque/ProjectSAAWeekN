@@ -883,52 +883,34 @@ namespace SudokuWeekN
                 for (int j = 0; j < 9; j++)
                 {
                     tbox[i, j] = new TextBox();
-                    tbox[i, j].Location = new Point((i + 2) * 22, (j + 2) * 22);
+                    tbox[i, j].Location = new Point((i + 2) * 25, (j + 2) * 25);
                     tbox[i, j].Visible = true;
                     tbox[i, j].Size = new Size(20, 20);
                     tbox[i, j].MaxLength = 1;
                     tbox[i, j].TextAlign = HorizontalAlignment.Center;
+                    if(i<3 && j>5 || i < 3 && j < 3 || i > 2 && i < 6 && j > 2 && j < 6 || i > 5 && j>5 || i > 5 && j < 3)
+                    {
+                        tbox[i, j].BackColor = Color.SkyBlue;
+                        tbox[i, j].ForeColor = Color.Purple;
+                    }
+                    else
+                    {
+                        tbox[i, j].BackColor = Color.MediumPurple;
+                        tbox[i, j].ForeColor = Color.GhostWhite;
+                    }
                     this.Controls.Add(tbox[i, j]);
+                    tbox[i, j].KeyPress += new KeyPressEventHandler(textbox_KeyPress);
                     tbox[i, j].Text = soal[i, j];
                 }
             }
-
-            //check kolom
-            int cekkembar = 0;
-            for (int baris = 0; baris < 9; baris++)
-            {
-                for (int kolom = 0; kolom < 9; kolom++)
-                {
-                    for (int counter = 0; counter < 9; counter++)
-                    {
-                        if (tbox[baris, kolom] == tbox[baris, counter])
-                        {
-                            cekkembar++;
-                        }
-                        if (cekkembar > 1)
-                        {
-                            tbox[baris, kolom].ForeColor = Color.Red;
-                            tbox[baris, counter].ForeColor = Color.Red;
-                            cekkembar = 0;
-                        }
-                    }
-                    cekkembar = 0;
-                }
-                cekkembar = 0;
-            }
         }
 
-        private void tbox_KeyPress(object sender, KeyPressEventArgs e)
+        private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string karakter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ., ";
-            if (karakter.IndexOf(e.KeyChar) < 0)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '0'))
             {
-                MessageBox.Show("Hanya Bisa Dimasuki Huruf");
-                e.Handled = true; 
-            }
-            else
-            {
-
+                e.Handled = true;
             }
         }
     }
