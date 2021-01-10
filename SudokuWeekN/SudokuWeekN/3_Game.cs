@@ -879,41 +879,42 @@ namespace SudokuWeekN
 
             //Ini codingan bikin textbox array   
             string nama;
-            for (int i = 0; i < 9; i++)
+            for (int x = 0; x < 9; x++)
             {
-                for (int j = 0; j < 9; j++)
+                for (int y = 0; y < 9; y++)
                 {
-                    tbox[i, j] = new TextBox();
-                    nama = Convert.ToString(j) + Convert.ToString(i);
-                    tbox[i, j].Name = nama;
-                    tbox[i, j].Location = new Point((i + 3) * 26, (j + 2) * 26);
-                    tbox[i, j].Visible = true;
-                    tbox[i, j].Size = new Size(20, 20);
-                    tbox[i, j].MaxLength = 1;
-                    tbox[i, j].TextAlign = HorizontalAlignment.Center;
+                    tbox[x, y] = new TextBox();
+                    nama = Convert.ToString(y) + Convert.ToString(y);
+                    tbox[x, y].Name = nama;
+                    tbox[x, y].Location = new Point((x + 3) * 26, (y + 2) * 26);
+                    tbox[x, y].Visible = true;
+                    tbox[x, y].Size = new Size(20, 20);
+                    tbox[x, y].MaxLength = 1;
+                    tbox[x, y].TextAlign = HorizontalAlignment.Center;
 
                     //ini code mewarnai textbox
-                    if(i<3 && j>5 || i < 3 && j < 3 || i > 2 && i < 6 && j > 2 && j < 6 || i > 5 && j>5 || i > 5 && j < 3)
+                    if(x<3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
-                        tbox[i, j].BackColor = Color.SkyBlue;
-                        tbox[i, j].ForeColor = Color.Purple;
+                        tbox[x, y].BackColor = Color.SkyBlue;
+                        tbox[x, y].ForeColor = Color.Purple;
                     }
                     else
                     {
-                        tbox[i, j].BackColor = Color.MediumPurple;
-                        tbox[i, j].ForeColor = Color.GhostWhite;
+                        tbox[x, y].BackColor = Color.MediumPurple;
+                        tbox[x, y].ForeColor = Color.GhostWhite;
                     }
-                    this.Controls.Add(tbox[i, j]);
-                    tbox[i, j].KeyPress += new KeyPressEventHandler(textbox_KeyPress);
-                    tbox[i, j].Text = soal[i, j];
+                    this.Controls.Add(tbox[x, y]);
+                    tbox[x, y].KeyPress += new KeyPressEventHandler(textbox_KeyPress);
+                    tbox[x, y].Text = soal[x, y];
                 }
             }
 
         }
-
-        //ini code biar yg masuk angka doang
+        
+        
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //ini code biar yg masuk angka doang
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
             {
                 e.Handled = true;
@@ -921,9 +922,73 @@ namespace SudokuWeekN
 
             //INI CODE NYARI BARIS DAN KOLOM YANG AKTIF
             var tboxbariskolom = sender as TextBox;
-            string baris = Convert.ToString(tboxbariskolom.Name.Substring(0, 1));
-            string kolom = Convert.ToString(tboxbariskolom.Name.Substring(1, 1));
+            int sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
+            int sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
+
+            //INI CODE CEK SUMBU X
+            for (int x=0; x<9; x++)
+            {
+                if (sumbux != x)
+                {
+                    if (tbox[sumbux, sumbuy].Text == tbox[x, sumbuy].Text)
+                    {
+                        tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                        tbox[x, sumbuy].BackColor = Color.LightPink;
+                        tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                        tbox[x, sumbuy].ForeColor = Color.Red;
+                    }
+                }
+            }
+
+            //INI CODE CEK SUMBU Y
+            for (int y=0; y<9; y++)
+            {
+                if (sumbuy != y)
+                {
+                    if (tbox[sumbux, sumbuy].Text == tbox[sumbux, y].Text)
+                    {
+                        tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                        tbox[sumbux, y].BackColor = Color.LightPink;
+                        tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                        tbox[sumbux, y].ForeColor = Color.Red;
+                    }
+                }
+            }
+
+            //INI CODE CEK KOTAK
+
+            //CEK KOTAK KIRI ATAS
+            if (sumbux < 3 && sumbuy < 3)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    for (int y = 0; y < 3; y++)
+                    {
+                        if (tbox[x,y].Text != tbox[sumbux, sumbuy].Text)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
             
+            //CEK KOTAK TENGAH ATAS
+            if (sumbux < 3 && sumbuy > 2 && sumbuy < 6)
+            {
+                for (int x = 3; x < 6; x++)
+                {
+                    for (int y = 0; y < 3; y++)
+                    {
+
+                    }
+                }
+            }
         }
     }
 }
