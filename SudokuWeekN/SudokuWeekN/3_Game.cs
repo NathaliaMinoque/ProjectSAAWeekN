@@ -877,12 +877,15 @@ namespace SudokuWeekN
                 soal[8, 8] = "5";
             }
 
-            //Ini codingan bikin textbox array          
+            //Ini codingan bikin textbox array   
+            string nama;
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 9; j++)
                 {
                     tbox[i, j] = new TextBox();
+                    nama = Convert.ToString(j) + Convert.ToString(i);
+                    tbox[i, j].Name = nama;
                     tbox[i, j].Location = new Point((i + 3) * 26, (j + 2) * 26);
                     tbox[i, j].Visible = true;
                     tbox[i, j].Size = new Size(20, 20);
@@ -915,6 +918,12 @@ namespace SudokuWeekN
             {
                 e.Handled = true;
             }
+
+            //INI CODE NYARI BARIS DAN KOLOM YANG AKTIF
+            var tboxbariskolom = sender as TextBox;
+            string baris = Convert.ToString(tboxbariskolom.Name.Substring(0, 1));
+            string kolom = Convert.ToString(tboxbariskolom.Name.Substring(1, 1));
+            
         }
     }
 }
