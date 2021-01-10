@@ -113,6 +113,36 @@ namespace SudokuWeekN.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _20210110_100048_0000 {
+            get {
+                object obj = ResourceManager.GetObject("20210110_100048_0000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20210110_130335_0000 {
+            get {
+                object obj = ResourceManager.GetObject("20210110_130335_0000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20210110_131058_0000 {
+            get {
+                object obj = ResourceManager.GetObject("20210110_131058_0000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PicsArt_01_07_02_33_38 {
             get {
                 object obj = ResourceManager.GetObject("PicsArt_01-07-02.33.38", resourceCulture);

@@ -65,6 +65,7 @@ namespace SudokuWeekN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SudokuWeekN.Properties.Resources._20210110_131058_0000;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(819, 472);
             this.Controls.Add(this.pictureBox3);

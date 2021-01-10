@@ -883,11 +883,13 @@ namespace SudokuWeekN
                 for (int j = 0; j < 9; j++)
                 {
                     tbox[i, j] = new TextBox();
-                    tbox[i, j].Location = new Point((i + 2) * 25, (j + 2) * 25);
+                    tbox[i, j].Location = new Point((i + 3) * 26, (j + 2) * 26);
                     tbox[i, j].Visible = true;
                     tbox[i, j].Size = new Size(20, 20);
                     tbox[i, j].MaxLength = 1;
                     tbox[i, j].TextAlign = HorizontalAlignment.Center;
+
+                    //ini code mewarnai textbox
                     if(i<3 && j>5 || i < 3 && j < 3 || i > 2 && i < 6 && j > 2 && j < 6 || i > 5 && j>5 || i > 5 && j < 3)
                     {
                         tbox[i, j].BackColor = Color.SkyBlue;
@@ -903,12 +905,13 @@ namespace SudokuWeekN
                     tbox[i, j].Text = soal[i, j];
                 }
             }
+
         }
 
         //ini code biar yg masuk angka doang
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
             {
                 e.Handled = true;
             }
