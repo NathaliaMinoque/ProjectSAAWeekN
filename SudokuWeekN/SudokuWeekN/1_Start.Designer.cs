@@ -44,6 +44,7 @@ namespace SudokuWeekN
             this.pictureBoxWeekN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxWeekN.TabIndex = 1;
             this.pictureBoxWeekN.TabStop = false;
+            this.pictureBoxWeekN.UseWaitCursor = true;
             this.pictureBoxWeekN.Click += new System.EventHandler(this.pictureBoxWeekN_Click);
             // 
             // pictureBoxStart
@@ -56,6 +57,7 @@ namespace SudokuWeekN
             this.pictureBoxStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxStart.TabIndex = 0;
             this.pictureBoxStart.TabStop = false;
+            this.pictureBoxStart.UseWaitCursor = true;
             // 
             // FormOpening
             // 
@@ -66,6 +68,7 @@ namespace SudokuWeekN
             this.Controls.Add(this.pictureBoxStart);
             this.Name = "FormOpening";
             this.Text = "Sudoku Week-N";
+            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.FormOpening_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWeekN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStart)).EndInit();

@@ -18,13 +18,13 @@ namespace SudokuWeekN
         }
 
         public TextBox[,] tbox = new TextBox[9, 9];
+        public string[,] soal = new string[9, 9];
 
         private void FormGame_Load(object sender, EventArgs e)
         {
             //Code buat nentuin paket soal           
             Random random = new Random();
             int tempsoal = random.Next(1, 10);
-            string[,] soal = new string[9, 9];
 
             if (tempsoal == 1)
             {
@@ -884,7 +884,7 @@ namespace SudokuWeekN
                 for (int y = 0; y < 9; y++)
                 {
                     tbox[x, y] = new TextBox();
-                    nama = Convert.ToString(y) + Convert.ToString(y);
+                    nama = Convert.ToString(x) + Convert.ToString(y);
                     tbox[x, y].Name = nama;
                     tbox[x, y].Location = new Point((x + 3) * 26, (y + 2) * 26);
                     tbox[x, y].Visible = true;
@@ -893,7 +893,7 @@ namespace SudokuWeekN
                     tbox[x, y].TextAlign = HorizontalAlignment.Center;
 
                     //ini code mewarnai textbox
-                    if(x<3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
+                    if(x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
                         tbox[x, y].BackColor = Color.SkyBlue;
                         tbox[x, y].ForeColor = Color.Purple;
@@ -903,30 +903,58 @@ namespace SudokuWeekN
                         tbox[x, y].BackColor = Color.MediumPurple;
                         tbox[x, y].ForeColor = Color.GhostWhite;
                     }
+
                     this.Controls.Add(tbox[x, y]);
+                    //tbox[x, y].TextChanged += new EventHandler(textbox_TextChange);
                     tbox[x, y].KeyPress += new KeyPressEventHandler(textbox_KeyPress);
                     tbox[x, y].Text = soal[x, y];
                 }
             }
 
         }
-        
-        
+
+        //private void textbox_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+            //ini code biar yg masuk angka doang
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
+            //{
+                //e.Handled = true;
+            //}
+        //}
+
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //ini code biar yg masuk angka doang
+            //ini code biar angka doang
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
             {
                 e.Handled = true;
             }
 
-            //INI CODE NYARI BARIS DAN KOLOM YANG AKTIF
+            //ini code pewarnaan ulang
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
+                    {
+                        tbox[x, y].BackColor = Color.SkyBlue;
+                        tbox[x, y].ForeColor = Color.Purple;
+                    }
+                    else
+                    {
+                        tbox[x, y].BackColor = Color.MediumPurple;
+                        tbox[x, y].ForeColor = Color.GhostWhite;
+                    }
+                }
+            }
+
+            //INI CODE NYARI SUMBU X DAN Y  YANG AKTIF
             var tboxbariskolom = sender as TextBox;
-            int sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
-            int sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
+            int sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
+            int sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
 
             //INI CODE CEK SUMBU X
-            for (int x=0; x<9; x++)
+            for (int x = 0; x < 9; x++)
             {
                 if (sumbux != x)
                 {
@@ -941,7 +969,7 @@ namespace SudokuWeekN
             }
 
             //INI CODE CEK SUMBU Y
-            for (int y=0; y<9; y++)
+            for (int y = 0; y < 9; y++)
             {
                 if (sumbuy != y)
                 {
@@ -956,7 +984,6 @@ namespace SudokuWeekN
             }
 
             //INI CODE CEK KOTAK
-
             //CEK KOTAK KIRI ATAS
             if (sumbux < 3 && sumbuy < 3)
             {
@@ -964,7 +991,7 @@ namespace SudokuWeekN
                 {
                     for (int y = 0; y < 3; y++)
                     {
-                        if (tbox[x,y].Text != tbox[sumbux, sumbuy].Text)
+                        if (x != sumbux && y != sumbuy)
                         {
                             if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
                             {
@@ -977,15 +1004,171 @@ namespace SudokuWeekN
                     }
                 }
             }
-            
-            //CEK KOTAK TENGAH ATAS
+
+            //CEK KOTAK kiri tengah
             if (sumbux < 3 && sumbuy > 2 && sumbuy < 6)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    for (int y = 3; y < 6; y++)
+                    {
+                        if (x != sumbux && y != sumbuy)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //CEK KOTAK kiri bawah
+            if (sumbux < 3 && sumbuy > 5)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    for (int y = 6; y < 9; y++)
+                    {
+                        if (x != sumbux && y != sumbuy)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //CEK KOTAK tengah atas
+            if (sumbux > 2 && sumbux < 6 && sumbuy < 3)
             {
                 for (int x = 3; x < 6; x++)
                 {
                     for (int y = 0; y < 3; y++)
                     {
+                        if (x != sumbux && y != sumbuy)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
 
+            //CEK KOTAK tengah
+            if (sumbux > 2 && sumbux < 6 && sumbuy > 2 && sumbuy < 6)
+            {
+                for (int x = 3; x < 6; x++)
+                {
+                    for (int y = 3; y < 6; y++)
+                    {
+                        if (x != sumbux && y != sumbuy)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //CEK KOTAK tengah bawah
+            if (sumbux > 2 && sumbux < 6 && sumbuy > 5)
+            {
+                for (int x = 3; x < 6; x++)
+                {
+                    for (int y = 6; y < 9; y++)
+                    {
+                        if (x != sumbux && y != sumbuy)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //CEK KOTAK kanan atas
+            if (sumbux > 5 && sumbuy < 3)
+            {
+                for (int x = 6; x < 9; x++)
+                {
+                    for (int y = 0; y < 3; y++)
+                    {
+                        if (x != sumbux && y != sumbuy)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //CEK KOTAK kanan tengah
+            if (sumbux > 5 && sumbuy > 2 && sumbuy < 6)
+            {
+                for (int x = 6; x < 9; x++)
+                {
+                    for (int y = 3; y < 6; y++)
+                    {
+                        if (x != sumbux && y != sumbuy)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //CEK KOTAK kanan bawah
+            if (sumbux > 5 && sumbuy > 5)
+            {
+                for (int x = 6; x < 9; x++)
+                {
+                    for (int y = 6; y < 9; y++)
+                    {
+                        if (x != sumbux && y != sumbuy)
+                        {
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            {
+                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                tbox[x, y].BackColor = Color.LightPink;
+                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                tbox[x, y].ForeColor = Color.Red;
+                            }
+                        }
                     }
                 }
             }
