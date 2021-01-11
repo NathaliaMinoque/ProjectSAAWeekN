@@ -891,9 +891,9 @@ namespace SudokuWeekN
                     tbox[x, y].Size = new Size(20, 20);
                     tbox[x, y].MaxLength = 1;
                     tbox[x, y].TextAlign = HorizontalAlignment.Center;
-
+                    this.Controls.Add(tbox[x, y]);
                     //ini code mewarnai textbox
-                    if(x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
+                    if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
                         tbox[x, y].BackColor = Color.SkyBlue;
                         tbox[x, y].ForeColor = Color.Purple;
@@ -904,37 +904,30 @@ namespace SudokuWeekN
                         tbox[x, y].ForeColor = Color.GhostWhite;
                     }
 
-                    this.Controls.Add(tbox[x, y]);
+                    
                     //tbox[x, y].TextChanged += new EventHandler(textbox_TextChange);
                     tbox[x, y].KeyPress += new KeyPressEventHandler(textbox_KeyPress);
                     tbox[x, y].Text = soal[x, y];
                 }
             }
-
         }
 
         //private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         //{
-            //ini code biar yg masuk angka doang
-            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
-            //{
-                //e.Handled = true;
-            //}
+        //    //ini code biar yg masuk angka doang
+        //    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
+        //    {
+        //        e.Handled = true;
+        //    }
         //}
 
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //ini code biar angka doang
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
-            {
-                e.Handled = true;
-            }
-
-            //ini code pewarnaan ulang
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
                 {
+                    //ini code mewarnai textbox ulang
                     if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
                         tbox[x, y].BackColor = Color.SkyBlue;
@@ -1173,5 +1166,6 @@ namespace SudokuWeekN
                 }
             }
         }
+
     }
 }
