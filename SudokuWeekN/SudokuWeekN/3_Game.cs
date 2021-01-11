@@ -25,7 +25,18 @@ namespace SudokuWeekN
             //Code buat nentuin paket soal           
             Random random = new Random();
             int tempsoal = random.Next(1, 10);
-
+            
+            // 1 = Salah
+            // 2 = Betul
+            // 3 = Betul
+            // 4 = Betul
+            // 5 = Betul
+            // 6 = Betul
+            // 7 = Betul
+            // 8 = Salah
+            // 9 = Betul
+            // 10 = Betul
+            
             if (tempsoal == 1)
             {
                 soal[0, 0] = "2";
@@ -902,26 +913,25 @@ namespace SudokuWeekN
                     {
                         tbox[x, y].BackColor = Color.MediumPurple;
                         tbox[x, y].ForeColor = Color.GhostWhite;
-                    }
-
-                    
-                    //tbox[x, y].TextChanged += new EventHandler(textbox_TextChange);
+                    }                  
+                    tbox[x, y].KeyUp += new KeyEventHandler(textbox_KeyUp);
                     tbox[x, y].KeyPress += new KeyPressEventHandler(textbox_KeyPress);
+                    tbox[x, y].Enter += new EventHandler(simpanposisiTboxHint_Enter);
                     tbox[x, y].Text = soal[x, y];
                 }
             }
         }
 
-        //private void textbox_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    //ini code biar yg masuk angka doang
-        //    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
-        //    {
-        //        e.Handled = true;
-        //    }
-        //}
-
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //ini code biar yg masuk angka doang
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textbox_KeyUp(object sender, KeyEventArgs e)
         {
             for (int x = 0; x < 9; x++)
             {
@@ -951,7 +961,7 @@ namespace SudokuWeekN
             {
                 if (sumbux != x)
                 {
-                    if (tbox[sumbux, sumbuy].Text == tbox[x, sumbuy].Text)
+                    if (tbox[sumbux, sumbuy].Text == tbox[x, sumbuy].Text && tbox[sumbux, sumbuy].Text != "")
                     {
                         tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                         tbox[x, sumbuy].BackColor = Color.LightPink;
@@ -966,7 +976,7 @@ namespace SudokuWeekN
             {
                 if (sumbuy != y)
                 {
-                    if (tbox[sumbux, sumbuy].Text == tbox[sumbux, y].Text)
+                    if (tbox[sumbux, sumbuy].Text == tbox[sumbux, y].Text && tbox[sumbux, sumbuy].Text != "")
                     {
                         tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                         tbox[sumbux, y].BackColor = Color.LightPink;
@@ -986,7 +996,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1007,7 +1017,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1028,7 +1038,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1049,7 +1059,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1070,7 +1080,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1091,7 +1101,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1112,7 +1122,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1133,7 +1143,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1154,7 +1164,7 @@ namespace SudokuWeekN
                     {
                         if (x != sumbux && y != sumbuy)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text)
+                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
                             {
                                 tbox[sumbux, sumbuy].BackColor = Color.LightPink;
                                 tbox[x, y].BackColor = Color.LightPink;
@@ -1167,5 +1177,19 @@ namespace SudokuWeekN
             }
         }
 
+        private void pictureBoxHint_Click(object sender, EventArgs e)
+        {
+            //INI CODE NYARI SUMBU X DAN Y  YANG AKTIF
+            tbox[sumbux, sumbuy].Text = soal[sumbux, sumbuy];
+        }
+        public int sumbux = 0;
+        public int sumbuy = 0;
+        private void simpanposisiTboxHint_Enter(object sender, EventArgs e)
+        {
+            var tboxbariskolom = sender as TextBox;
+            sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
+            sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
+            //MessageBox.Show(sumbux.ToString());           
+        }
     }
 }

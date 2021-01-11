@@ -49,6 +49,7 @@ namespace SudokuWeekN
             this.pictureBoxHint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxHint.TabIndex = 1;
             this.pictureBoxHint.TabStop = false;
+            this.pictureBoxHint.Click += new System.EventHandler(this.pictureBoxHint_Click);
             // 
             // pictureBoxGiveUp
             // 

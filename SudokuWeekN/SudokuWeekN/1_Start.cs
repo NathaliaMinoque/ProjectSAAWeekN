@@ -28,5 +28,6 @@ namespace SudokuWeekN
             f2.Show();
             this.Hide();
         }
+
     }
 }
