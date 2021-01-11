@@ -33,10 +33,12 @@ namespace SudokuWeekN
             this.pictureBoxEasy = new System.Windows.Forms.PictureBox();
             this.pictureBoxMedium = new System.Windows.Forms.PictureBox();
             this.pictureBoxLevel = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRules = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRules)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxHard
@@ -83,11 +85,22 @@ namespace SudokuWeekN
             this.pictureBoxLevel.TabIndex = 0;
             this.pictureBoxLevel.TabStop = false;
             // 
+            // pictureBoxRules
+            // 
+            this.pictureBoxRules.Image = global::SudokuWeekN.Properties.Resources._20210111_095938;
+            this.pictureBoxRules.Location = new System.Drawing.Point(688, 388);
+            this.pictureBoxRules.Name = "pictureBoxRules";
+            this.pictureBoxRules.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxRules.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRules.TabIndex = 4;
+            this.pictureBoxRules.TabStop = false;
+            // 
             // FormLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBoxRules);
             this.Controls.Add(this.pictureBoxHard);
             this.Controls.Add(this.pictureBoxEasy);
             this.Controls.Add(this.pictureBoxMedium);
@@ -98,6 +111,7 @@ namespace SudokuWeekN
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRules)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,5 +122,6 @@ namespace SudokuWeekN
         private System.Windows.Forms.PictureBox pictureBoxMedium;
         private System.Windows.Forms.PictureBox pictureBoxEasy;
         private System.Windows.Forms.PictureBox pictureBoxHard;
+        private System.Windows.Forms.PictureBox pictureBoxRules;
     }
 }
