@@ -63,6 +63,7 @@ namespace SudokuWeekN
             this.pictureBoxGiveUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGiveUp.TabIndex = 2;
             this.pictureBoxGiveUp.TabStop = false;
+            this.pictureBoxGiveUp.Click += new System.EventHandler(this.pictureBoxGiveUp_Click);
             // 
             // pictureBoxRestart
             // 
@@ -73,6 +74,7 @@ namespace SudokuWeekN
             this.pictureBoxRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxRestart.TabIndex = 3;
             this.pictureBoxRestart.TabStop = false;
+            this.pictureBoxRestart.Click += new System.EventHandler(this.pictureBoxRestart_Click);
             // 
             // FormGame
             // 

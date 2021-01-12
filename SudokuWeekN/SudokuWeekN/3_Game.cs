@@ -1191,5 +1191,23 @@ namespace SudokuWeekN
             sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
             //MessageBox.Show(sumbux.ToString());           
         }
+
+        private void pictureBoxRestart_Click(object sender, EventArgs e)
+        {
+            FormGame f2 = new FormGame();
+            f2.Show();
+            this.Hide();
+        }
+
+        private void pictureBoxGiveUp_Click(object sender, EventArgs e)
+        {
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    tbox[x, y].Text = soal[x, y];
+                }
+            }
+        }
     }
 }
