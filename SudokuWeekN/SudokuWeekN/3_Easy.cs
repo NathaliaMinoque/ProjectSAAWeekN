@@ -19,7 +19,7 @@ namespace SudokuWeekN
 
         public TextBox[,] tbox = new TextBox[9, 9];
         public string[,] soal = new string[9, 9];
-
+       
         private void FormGame_Load(object sender, EventArgs e)
         {
             //Code buat nentuin paket soal           
@@ -890,6 +890,8 @@ namespace SudokuWeekN
 
             //Ini codingan bikin textbox array   
             string nama;
+            int counter = 0;
+            
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
@@ -907,17 +909,44 @@ namespace SudokuWeekN
                     if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
                         tbox[x, y].BackColor = Color.SkyBlue;
-                        tbox[x, y].ForeColor = Color.Purple;
+                        tbox[x, y].ForeColor = Color.DarkSlateGray;
                     }
                     else
                     {
-                        tbox[x, y].BackColor = Color.MediumPurple;
-                        tbox[x, y].ForeColor = Color.GhostWhite;
+                        tbox[x, y].BackColor = Color.Orchid;
+                        tbox[x, y].ForeColor = Color.DarkSlateGray;
                     }                  
                     tbox[x, y].KeyUp += new KeyEventHandler(textbox_KeyUp);
                     tbox[x, y].KeyPress += new KeyPressEventHandler(textbox_KeyPress);
                     tbox[x, y].Enter += new EventHandler(simpanposisiTboxHint_Enter);
-                    tbox[x, y].Text = soal[x, y];
+
+                   
+                }
+            }
+
+            while (counter != 25)
+            {
+                //INI CODE BUAT LEVEL
+                counter = 0;
+                for (int x = 0; x < 9; x++)
+                {
+                    for (int y = 0; y < 9; y++)
+                    {
+                        int randoms = random.Next(0, 2);
+                        tbox[x, y].Tag = randoms;
+                        
+                        if (tbox[x, y].Tag.ToString() == "1")
+                        {
+                            tbox[x, y].Enabled = true;
+                            counter++;
+                            tbox[x, y].Text = "";
+                        }
+                        else
+                        {
+                            tbox[x, y].Enabled = false;
+                            tbox[x, y].Text = soal[x, y];
+                        }
+                    }
                 }
             }
         }
@@ -941,12 +970,12 @@ namespace SudokuWeekN
                     if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
                         tbox[x, y].BackColor = Color.SkyBlue;
-                        tbox[x, y].ForeColor = Color.Purple;
+                        tbox[x, y].ForeColor = Color.DarkSlateGray;
                     }
                     else
                     {
-                        tbox[x, y].BackColor = Color.MediumPurple;
-                        tbox[x, y].ForeColor = Color.GhostWhite;
+                        tbox[x, y].BackColor = Color.Orchid;
+                        tbox[x, y].ForeColor = Color.DarkSlateGray;
                     }
                 }
             }
@@ -1208,6 +1237,11 @@ namespace SudokuWeekN
                     tbox[x, y].Text = soal[x, y];
                 }
             }
+        }
+
+        private void pictureBoxClose1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

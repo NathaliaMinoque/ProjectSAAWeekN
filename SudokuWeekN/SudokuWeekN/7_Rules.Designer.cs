@@ -1,7 +1,7 @@
 ﻿
 namespace SudokuWeekN
 {
-    partial class FormOpening
+    partial class FormRules
     {
         /// <summary>
         /// Required designer variable.
@@ -29,42 +29,39 @@ namespace SudokuWeekN
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBoxClose1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxClose1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::SudokuWeekN.Properties.Resources._20210112_123250_0000;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBoxClose1.Image = global::SudokuWeekN.Properties.Resources._20210111_100002;
+            this.pictureBoxClose1.Location = new System.Drawing.Point(688, 388);
+            this.pictureBoxClose1.Name = "pictureBoxClose1";
+            this.pictureBoxClose1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxClose1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxClose1.TabIndex = 0;
+            this.pictureBoxClose1.TabStop = false;
+            this.pictureBoxClose1.Click += new System.EventHandler(this.pictureBoxClose1_Click);
             // 
-            // FormOpening
+            // FormRules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SudokuWeekN.Properties.Resources._20210112_123250_0000;
+            this.BackgroundImage = global::SudokuWeekN.Properties.Resources._20210112_123949_0000;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxClose1);
             this.DoubleBuffered = true;
-            this.Name = "FormOpening";
+            this.Name = "FormRules";
             this.Text = "Sudoku Week-N";
-            this.UseWaitCursor = true;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxClose1;
     }
 }
-

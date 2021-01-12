@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace SudokuWeekN
 {
-    public partial class FormOpening : Form
+    public partial class FormCongrats : Form
     {
-        public FormOpening()
+        public FormCongrats()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void FormCongrats_Load(object sender, EventArgs e)
         {
-            FormLevel Level = new FormLevel();
-            Level.Show();
-            this.Hide();
+
         }
     }
 }

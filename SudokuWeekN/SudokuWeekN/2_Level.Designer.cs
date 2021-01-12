@@ -94,6 +94,7 @@ namespace SudokuWeekN
             this.pictureBoxRules.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxRules.TabIndex = 4;
             this.pictureBoxRules.TabStop = false;
+            this.pictureBoxRules.Click += new System.EventHandler(this.pictureBoxRules_Click);
             // 
             // FormLevel
             // 

@@ -52,6 +52,7 @@ namespace SudokuWeekN
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormCongrats";
             this.Text = "Sudoku Week-N";
+            this.Load += new System.EventHandler(this.FormCongrats_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
