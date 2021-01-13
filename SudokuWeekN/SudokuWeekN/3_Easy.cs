@@ -24,102 +24,91 @@ namespace SudokuWeekN
         {
             //Code buat nentuin paket soal           
             Random random = new Random();
-            int tempsoal = random.Next(1, 10);
-            
-            // 1 = Salah
-            // 2 = Betul
-            // 3 = Betul
-            // 4 = Betul
-            // 5 = Betul
-            // 6 = Betul
-            // 7 = Betul
-            // 8 = Salah
-            // 9 = Betul
-            // 10 = Betul
+            int tempsoal = random.Next(1, 10);          
             
             if (tempsoal == 1)
             {
-                soal[0, 0] = "2";
-                soal[0, 1] = "4";
-                soal[0, 2] = "8";
-                soal[0, 3] = "1";
-                soal[0, 4] = "3";
-                soal[0, 5] = "6";
-                soal[0, 6] = "5";
-                soal[0, 7] = "7";
-                soal[0, 8] = "9";
-                soal[1, 0] = "7";
-                soal[1, 1] = "6";
-                soal[1, 2] = "5";
-                soal[1, 3] = "2";
-                soal[1, 4] = "9";
-                soal[1, 5] = "4";
-                soal[1, 6] = "1";
-                soal[1, 7] = "3";
-                soal[1, 8] = "8";
-                soal[2, 0] = "3";
-                soal[2, 1] = "9";
-                soal[2, 2] = "1";
-                soal[2, 3] = "8";
-                soal[2, 4] = "5";
-                soal[2, 5] = "7";
+                soal[0, 0] = "5";
+                soal[0, 1] = "3";
+                soal[0, 2] = "1";
+                soal[0, 3] = "8";
+                soal[0, 4] = "9";
+                soal[0, 5] = "4";
+                soal[0, 6] = "7";
+                soal[0, 7] = "6";
+                soal[0, 8] = "2";
+                soal[1, 0] = "6";
+                soal[1, 1] = "4";
+                soal[1, 2] = "9";
+                soal[1, 3] = "5";
+                soal[1, 4] = "2";
+                soal[1, 5] = "7";
+                soal[1, 6] = "3";
+                soal[1, 7] = "8";
+                soal[1, 8] = "1";
+                soal[2, 0] = "8";
+                soal[2, 1] = "2";
+                soal[2, 2] = "7";
+                soal[2, 3] = "1";
+                soal[2, 4] = "6";
+                soal[2, 5] = "3";
                 soal[2, 6] = "4";
-                soal[2, 7] = "6";
-                soal[2, 8] = "2";
+                soal[2, 7] = "5";
+                soal[2, 8] = "9";
                 soal[3, 0] = "4";
-                soal[3, 1] = "1";
-                soal[3, 2] = "9";
-                soal[3, 3] = "7";
-                soal[3, 4] = "6";
-                soal[3, 5] = "8";
-                soal[3, 6] = "2";
-                soal[3, 7] = "5";
-                soal[3, 8] = "3";
-                soal[4, 0] = "6";
-                soal[4, 1] = "8";
-                soal[4, 2] = "7";
-                soal[4, 3] = "5";
-                soal[4, 4] = "2";
-                soal[4, 5] = "3";
+                soal[3, 1] = "9";
+                soal[3, 2] = "6";
+                soal[3, 3] = "3";
+                soal[3, 4] = "8";
+                soal[3, 5] = "2";
+                soal[3, 6] = "5";
+                soal[3, 7] = "1";
+                soal[3, 8] = "7";
+                soal[4, 0] = "2";
+                soal[4, 1] = "1";
+                soal[4, 2] = "8";
+                soal[4, 3] = "4";
+                soal[4, 4] = "7";
+                soal[4, 5] = "5";
                 soal[4, 6] = "9";
-                soal[4, 7] = "4";
-                soal[4, 8] = "1";
-                soal[5, 0] = "5";
-                soal[5, 1] = "2";
+                soal[4, 7] = "3";
+                soal[4, 8] = "6";
+                soal[5, 0] = "7";
+                soal[5, 1] = "5";
                 soal[5, 2] = "3";
-                soal[5, 3] = "4";
+                soal[5, 3] = "9";
                 soal[5, 4] = "1";
-                soal[5, 5] = "9";
-                soal[5, 6] = "6";
-                soal[5, 7] = "8";
-                soal[5, 8] = "7";
-                soal[6, 0] = "1";
+                soal[5, 5] = "6";
+                soal[5, 6] = "8";
+                soal[5, 7] = "2";
+                soal[5, 8] = "4";
+                soal[6, 0] = "3";
                 soal[6, 1] = "7";
                 soal[6, 2] = "4";
-                soal[6, 3] = "9";
-                soal[6, 4] = "8";
-                soal[6, 5] = "5";
-                soal[6, 6] = "3";
-                soal[6, 7] = "2";
-                soal[6, 8] = "6";
-                soal[7, 0] = "8";
-                soal[7, 1] = "3";
+                soal[6, 3] = "6";
+                soal[6, 4] = "5";
+                soal[6, 5] = "1";
+                soal[6, 6] = "2";
+                soal[6, 7] = "9";
+                soal[6, 8] = "8";
+                soal[7, 0] = "9";
+                soal[7, 1] = "6";
                 soal[7, 2] = "2";
-                soal[7, 3] = "6";
-                soal[7, 4] = "4";
-                soal[7, 5] = "1";
-                soal[7, 6] = "7";
-                soal[7, 7] = "9";
+                soal[7, 3] = "7";
+                soal[7, 4] = "3";
+                soal[7, 5] = "8";
+                soal[7, 6] = "1";
+                soal[7, 7] = "4";
                 soal[7, 8] = "5";
-                soal[8, 0] = "4";
-                soal[8, 1] = "3";
-                soal[8, 2] = "7";
-                soal[8, 3] = "3";
-                soal[8, 4] = "7";
-                soal[8, 5] = "2";
-                soal[8, 6] = "8";
-                soal[8, 7] = "1";
-                soal[8, 8] = "4";
+                soal[8, 0] = "1";
+                soal[8, 1] = "8";
+                soal[8, 2] = "5";
+                soal[8, 3] = "2";
+                soal[8, 4] = "4";
+                soal[8, 5] = "9";
+                soal[8, 6] = "6";
+                soal[8, 7] = "7";
+                soal[8, 8] = "3";
             }
 
             else if (tempsoal == 2)
@@ -635,87 +624,87 @@ namespace SudokuWeekN
 
             else if (tempsoal == 8)
             {
-                soal[0, 0] = "2";
-                soal[0, 1] = "6";
-                soal[0, 2] = "5";
-                soal[0, 3] = "4";
-                soal[0, 4] = "7";
-                soal[0, 5] = "1";
-                soal[0, 6] = "8";
-                soal[0, 7] = "9";
-                soal[0, 8] = "3";
-                soal[1, 0] = "4";
-                soal[1, 1] = "8";
+                soal[0, 0] = "9";
+                soal[0, 1] = "7";
+                soal[0, 2] = "4";
+                soal[0, 3] = "1";
+                soal[0, 4] = "2";
+                soal[0, 5] = "3";
+                soal[0, 6] = "6";
+                soal[0, 7] = "8";
+                soal[0, 8] = "5";
+                soal[1, 0] = "2";
+                soal[1, 1] = "6";
                 soal[1, 2] = "1";
-                soal[1, 3] = "3";
-                soal[1, 4] = "9";
-                soal[1, 5] = "6";
+                soal[1, 3] = "5";
+                soal[1, 4] = "8";
+                soal[1, 5] = "9";
                 soal[1, 6] = "7";
-                soal[1, 7] = "2";
-                soal[1, 8] = "5";
-                soal[2, 0] = "3";
-                soal[2, 1] = "7";
-                soal[2, 2] = "9";
-                soal[2, 3] = "2";
-                soal[2, 4] = "8";
-                soal[2, 5] = "5";
-                soal[2, 6] = "4";
-                soal[2, 7] = "6";
-                soal[2, 8] = "1";
-                soal[3, 0] = "5";
-                soal[3, 1] = "4";
-                soal[3, 2] = "8";
-                soal[3, 3] = "9";
-                soal[3, 4] = "5";
-                soal[3, 5] = "7";
-                soal[3, 6] = "1";
-                soal[3, 7] = "3";
-                soal[3, 8] = "2";
+                soal[1, 7] = "3";
+                soal[1, 8] = "4";
+                soal[2, 0] = "8";
+                soal[2, 1] = "3";
+                soal[2, 2] = "5";
+                soal[2, 3] = "7";
+                soal[2, 4] = "4";
+                soal[2, 5] = "6";
+                soal[2, 6] = "2";
+                soal[2, 7] = "1";
+                soal[2, 8] = "9";
+                soal[3, 0] = "3";
+                soal[3, 1] = "1";
+                soal[3, 2] = "9";
+                soal[3, 3] = "4";
+                soal[3, 4] = "7";
+                soal[3, 5] = "2";
+                soal[3, 6] = "5";
+                soal[3, 7] = "6";
+                soal[3, 8] = "8";
                 soal[4, 0] = "7";
-                soal[4, 1] = "5";
-                soal[4, 2] = "3";
-                soal[4, 3] = "6";
-                soal[4, 4] = "1";
-                soal[4, 5] = "2";
-                soal[4, 6] = "9";
+                soal[4, 1] = "8";
+                soal[4, 2] = "6";
+                soal[4, 3] = "9";
+                soal[4, 4] = "5";
+                soal[4, 5] = "1";
+                soal[4, 6] = "3";
                 soal[4, 7] = "4";
-                soal[4, 8] = "8";
-                soal[5, 0] = "9";
-                soal[5, 1] = "1";
+                soal[4, 8] = "2";
+                soal[5, 0] = "4";
+                soal[5, 1] = "5";
                 soal[5, 2] = "2";
-                soal[5, 3] = "8";
-                soal[5, 4] = "4";
-                soal[5, 5] = "3";
-                soal[5, 6] = "6";
-                soal[5, 7] = "5";
+                soal[5, 3] = "6";
+                soal[5, 4] = "3";
+                soal[5, 5] = "8";
+                soal[5, 6] = "1";
+                soal[5, 7] = "9";
                 soal[5, 8] = "7";
                 soal[6, 0] = "5";
-                soal[6, 1] = "2";
-                soal[6, 2] = "4";
-                soal[6, 3] = "7";
-                soal[6, 4] = "6";
-                soal[6, 5] = "8";
-                soal[6, 6] = "3";
-                soal[6, 7] = "1";
-                soal[6, 8] = "9";
-                soal[7, 0] = "8";
-                soal[7, 1] = "3";
-                soal[7, 2] = "6";
-                soal[7, 3] = "1";
-                soal[7, 4] = "2";
-                soal[7, 5] = "9";
-                soal[7, 6] = "5";
-                soal[7, 7] = "7";
-                soal[7, 8] = "4";
+                soal[6, 1] = "4";
+                soal[6, 2] = "3";
+                soal[6, 3] = "8";
+                soal[6, 4] = "1";
+                soal[6, 5] = "7";
+                soal[6, 6] = "9";
+                soal[6, 7] = "2";
+                soal[6, 8] = "6";
+                soal[7, 0] = "6";
+                soal[7, 1] = "2";
+                soal[7, 2] = "7";
+                soal[7, 3] = "3";
+                soal[7, 4] = "9";
+                soal[7, 5] = "4";
+                soal[7, 6] = "8";
+                soal[7, 7] = "5";
+                soal[7, 8] = "1";
                 soal[8, 0] = "1";
                 soal[8, 1] = "9";
-                soal[8, 2] = "7";
-                soal[8, 3] = "5";
-                soal[8, 4] = "3";
-                soal[8, 5] = "4";
-                soal[8, 6] = "2";
-                soal[8, 7] = "8";
-                soal[8, 8] = "6";
+                soal[8, 2] = "8";
+                soal[8, 3] = "2";
+                soal[8, 4] = "6";
+                soal[8, 5] = "5";
+                soal[8, 6] = "4";
+                soal[8, 7] = "7";
+                soal[8, 8] = "3";
             }
 
             else if (tempsoal == 9)
@@ -962,10 +951,16 @@ namespace SudokuWeekN
 
         private void textbox_KeyUp(object sender, KeyEventArgs e)
         {
+            int cek = 0;
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
                 {
+                    //INI CODE WIN
+                    if (tbox[x, y].Text == soal[x, y])
+                    {
+                        cek++;
+                    }
                     //ini code mewarnai textbox ulang
                     if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
@@ -979,226 +974,234 @@ namespace SudokuWeekN
                     }
                 }
             }
-
-            //INI CODE NYARI SUMBU X DAN Y  YANG AKTIF
-            var tboxbariskolom = sender as TextBox;
-            int sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
-            int sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
-
-            //INI CODE CEK SUMBU X
-            for (int x = 0; x < 9; x++)
+            if (cek == 81)
             {
-                if (sumbux != x)
-                {
-                    if (tbox[sumbux, sumbuy].Text == tbox[x, sumbuy].Text && tbox[sumbux, sumbuy].Text != "")
-                    {
-                        tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                        tbox[x, sumbuy].BackColor = Color.LightPink;
-                        tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                        tbox[x, sumbuy].ForeColor = Color.Red;
-                    }
-                }
+                FormCongrats congrats = new FormCongrats();
+                congrats.Show();
+                this.Hide();
             }
-
-            //INI CODE CEK SUMBU Y
-            for (int y = 0; y < 9; y++)
+            else
             {
-                if (sumbuy != y)
-                {
-                    if (tbox[sumbux, sumbuy].Text == tbox[sumbux, y].Text && tbox[sumbux, sumbuy].Text != "")
-                    {
-                        tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                        tbox[sumbux, y].BackColor = Color.LightPink;
-                        tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                        tbox[sumbux, y].ForeColor = Color.Red;
-                    }
-                }
-            }
+                //INI CODE NYARI SUMBU X DAN Y  YANG AKTIF
+                var tboxbariskolom = sender as TextBox;
+                int sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
+                int sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
 
-            //INI CODE CEK KOTAK
-            //CEK KOTAK KIRI ATAS
-            if (sumbux < 3 && sumbuy < 3)
-            {
-                for (int x = 0; x < 3; x++)
+                //INI CODE CEK SUMBU X
+                for (int x = 0; x < 9; x++)
                 {
-                    for (int y = 0; y < 3; y++)
+                    if (sumbux != x)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        if (tbox[sumbux, sumbuy].Text == tbox[x, sumbuy].Text && tbox[sumbux, sumbuy].Text != "")
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                            tbox[x, sumbuy].BackColor = Color.LightPink;
+                            tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                            tbox[x, sumbuy].ForeColor = Color.Red;
+                        }
+                    }
+                }
+
+                //INI CODE CEK SUMBU Y
+                for (int y = 0; y < 9; y++)
+                {
+                    if (sumbuy != y)
+                    {
+                        if (tbox[sumbux, sumbuy].Text == tbox[sumbux, y].Text && tbox[sumbux, sumbuy].Text != "")
+                        {
+                            tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                            tbox[sumbux, y].BackColor = Color.LightPink;
+                            tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                            tbox[sumbux, y].ForeColor = Color.Red;
+                        }
+                    }
+                }
+
+                //INI CODE CEK KOTAK
+                //CEK KOTAK KIRI ATAS
+                if (sumbux < 3 && sumbuy < 3)
+                {
+                    for (int x = 0; x < 3; x++)
+                    {
+                        for (int y = 0; y < 3; y++)
+                        {
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //CEK KOTAK kiri tengah
-            if (sumbux < 3 && sumbuy > 2 && sumbuy < 6)
-            {
-                for (int x = 0; x < 3; x++)
+                //CEK KOTAK kiri tengah
+                if (sumbux < 3 && sumbuy > 2 && sumbuy < 6)
                 {
-                    for (int y = 3; y < 6; y++)
+                    for (int x = 0; x < 3; x++)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        for (int y = 3; y < 6; y++)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //CEK KOTAK kiri bawah
-            if (sumbux < 3 && sumbuy > 5)
-            {
-                for (int x = 0; x < 3; x++)
+                //CEK KOTAK kiri bawah
+                if (sumbux < 3 && sumbuy > 5)
                 {
-                    for (int y = 6; y < 9; y++)
+                    for (int x = 0; x < 3; x++)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        for (int y = 6; y < 9; y++)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //CEK KOTAK tengah atas
-            if (sumbux > 2 && sumbux < 6 && sumbuy < 3)
-            {
-                for (int x = 3; x < 6; x++)
+                //CEK KOTAK tengah atas
+                if (sumbux > 2 && sumbux < 6 && sumbuy < 3)
                 {
-                    for (int y = 0; y < 3; y++)
+                    for (int x = 3; x < 6; x++)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        for (int y = 0; y < 3; y++)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //CEK KOTAK tengah
-            if (sumbux > 2 && sumbux < 6 && sumbuy > 2 && sumbuy < 6)
-            {
-                for (int x = 3; x < 6; x++)
+                //CEK KOTAK tengah
+                if (sumbux > 2 && sumbux < 6 && sumbuy > 2 && sumbuy < 6)
                 {
-                    for (int y = 3; y < 6; y++)
+                    for (int x = 3; x < 6; x++)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        for (int y = 3; y < 6; y++)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //CEK KOTAK tengah bawah
-            if (sumbux > 2 && sumbux < 6 && sumbuy > 5)
-            {
-                for (int x = 3; x < 6; x++)
+                //CEK KOTAK tengah bawah
+                if (sumbux > 2 && sumbux < 6 && sumbuy > 5)
                 {
-                    for (int y = 6; y < 9; y++)
+                    for (int x = 3; x < 6; x++)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        for (int y = 6; y < 9; y++)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //CEK KOTAK kanan atas
-            if (sumbux > 5 && sumbuy < 3)
-            {
-                for (int x = 6; x < 9; x++)
+                //CEK KOTAK kanan atas
+                if (sumbux > 5 && sumbuy < 3)
                 {
-                    for (int y = 0; y < 3; y++)
+                    for (int x = 6; x < 9; x++)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        for (int y = 0; y < 3; y++)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //CEK KOTAK kanan tengah
-            if (sumbux > 5 && sumbuy > 2 && sumbuy < 6)
-            {
-                for (int x = 6; x < 9; x++)
+                //CEK KOTAK kanan tengah
+                if (sumbux > 5 && sumbuy > 2 && sumbuy < 6)
                 {
-                    for (int y = 3; y < 6; y++)
+                    for (int x = 6; x < 9; x++)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        for (int y = 3; y < 6; y++)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //CEK KOTAK kanan bawah
-            if (sumbux > 5 && sumbuy > 5)
-            {
-                for (int x = 6; x < 9; x++)
+                //CEK KOTAK kanan bawah
+                if (sumbux > 5 && sumbuy > 5)
                 {
-                    for (int y = 6; y < 9; y++)
+                    for (int x = 6; x < 9; x++)
                     {
-                        if (x != sumbux && y != sumbuy)
+                        for (int y = 6; y < 9; y++)
                         {
-                            if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                            if (x != sumbux && y != sumbuy)
                             {
-                                tbox[sumbux, sumbuy].BackColor = Color.LightPink;
-                                tbox[x, y].BackColor = Color.LightPink;
-                                tbox[sumbux, sumbuy].ForeColor = Color.Red;
-                                tbox[x, y].ForeColor = Color.Red;
+                                if (tbox[sumbux, sumbuy].Text == tbox[x, y].Text && tbox[sumbux, sumbuy].Text != "")
+                                {
+                                    tbox[sumbux, sumbuy].BackColor = Color.LightPink;
+                                    tbox[x, y].BackColor = Color.LightPink;
+                                    tbox[sumbux, sumbuy].ForeColor = Color.Red;
+                                    tbox[x, y].ForeColor = Color.Red;
+                                }
                             }
                         }
                     }

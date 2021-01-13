@@ -55,6 +55,7 @@ namespace SudokuWeekN
             this.DoubleBuffered = true;
             this.Name = "FormRules";
             this.Text = "Sudoku Week-N";
+            this.Load += new System.EventHandler(this.FormRules_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose1)).EndInit();
             this.ResumeLayout(false);
 

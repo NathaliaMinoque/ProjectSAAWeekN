@@ -23,5 +23,10 @@ namespace SudokuWeekN
             Level.Show();
             this.Hide();
         }
+
+        private void FormRules_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

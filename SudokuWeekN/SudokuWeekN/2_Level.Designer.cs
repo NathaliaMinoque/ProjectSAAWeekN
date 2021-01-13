@@ -43,6 +43,7 @@ namespace SudokuWeekN
             // 
             // pictureBoxHard
             // 
+            this.pictureBoxHard.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBoxHard.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_07_03_03_43;
             this.pictureBoxHard.Location = new System.Drawing.Point(510, 178);
             this.pictureBoxHard.Name = "pictureBoxHard";
@@ -54,6 +55,7 @@ namespace SudokuWeekN
             // 
             // pictureBoxEasy
             // 
+            this.pictureBoxEasy.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxEasy.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_07_03_02_35;
             this.pictureBoxEasy.Location = new System.Drawing.Point(114, 178);
             this.pictureBoxEasy.Name = "pictureBoxEasy";
@@ -65,6 +67,7 @@ namespace SudokuWeekN
             // 
             // pictureBoxMedium
             // 
+            this.pictureBoxMedium.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxMedium.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_07_03_03_15;
             this.pictureBoxMedium.Location = new System.Drawing.Point(314, 179);
             this.pictureBoxMedium.Name = "pictureBoxMedium";
@@ -87,6 +90,7 @@ namespace SudokuWeekN
             // 
             // pictureBoxRules
             // 
+            this.pictureBoxRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxRules.Image = global::SudokuWeekN.Properties.Resources._20210111_095938;
             this.pictureBoxRules.Location = new System.Drawing.Point(688, 388);
             this.pictureBoxRules.Name = "pictureBoxRules";
