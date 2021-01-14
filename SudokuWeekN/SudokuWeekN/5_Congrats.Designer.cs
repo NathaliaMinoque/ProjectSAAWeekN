@@ -29,84 +29,72 @@ namespace SudokuWeekN
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRestart = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelScore = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxRestart
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::SudokuWeekN.Properties.Resources._20210107_143905_0003;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxRestart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxRestart.Image = global::SudokuWeekN.Properties.Resources._20210111_095911;
+            this.pictureBoxRestart.Location = new System.Drawing.Point(12, 388);
+            this.pictureBoxRestart.Name = "pictureBoxRestart";
+            this.pictureBoxRestart.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRestart.TabIndex = 3;
+            this.pictureBoxRestart.TabStop = false;
+            this.pictureBoxRestart.Click += new System.EventHandler(this.pictureBoxRestart_Click);
             // 
             // pictureBoxClose
             // 
-            this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxClose.Image = global::SudokuWeekN.Properties.Resources._20210111_100002;
             this.pictureBoxClose.Location = new System.Drawing.Point(688, 388);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxClose.TabIndex = 2;
+            this.pictureBoxClose.TabIndex = 4;
             this.pictureBoxClose.TabStop = false;
-            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox2.Image = global::SudokuWeekN.Properties.Resources._20210111_095911;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 388);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click_1);
             // 
             // labelScore
             // 
             this.labelScore.AutoSize = true;
-            this.labelScore.Location = new System.Drawing.Point(407, 281);
+            this.labelScore.BackColor = System.Drawing.Color.Transparent;
+            this.labelScore.Font = new System.Drawing.Font("OCR-B 10 BT", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScore.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.labelScore.Location = new System.Drawing.Point(368, 278);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(0, 20);
-            this.labelScore.TabIndex = 4;
-            this.labelScore.Click += new System.EventHandler(this.FormCongrats_Load);
+            this.labelScore.Size = new System.Drawing.Size(115, 33);
+            this.labelScore.TabIndex = 5;
+            this.labelScore.Text = "Score";
             // 
             // FormCongrats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SudokuWeekN.Properties.Resources._20210114_133511_0000;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelScore);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBoxClose);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxRestart);
+            this.DoubleBuffered = true;
             this.Name = "FormCongrats";
             this.Text = "Sudoku Week-N";
             this.Load += new System.EventHandler(this.FormCongrats_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxRestart;
         private System.Windows.Forms.PictureBox pictureBoxClose;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label labelScore;
     }
 }

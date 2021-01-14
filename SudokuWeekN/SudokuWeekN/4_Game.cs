@@ -19,10 +19,18 @@ namespace SudokuWeekN
 
         public TextBox[,] tbox = new TextBox[9, 9];
         public string[,] soal = new string[9, 9];
-        
-       
+        public int benar = 0;
+        public int salah = 0;
+        public int hint = 0;
+        public static int score = 100;
+
+
         private void FormGame_Load(object sender, EventArgs e)
         {
+            score = 100;
+            benar = 0;
+            salah = 0;
+            hint = 0;
             //Code buat nentuin paket soal           
             Random random = new Random();
             int tempsoal = random.Next(1, 10);          
@@ -950,13 +958,13 @@ namespace SudokuWeekN
             }
         }
 
-        public int benar = 0;
-        public int salah = 0;
 
         private void textbox_KeyUp(object sender, KeyEventArgs e)
         {
-            //salah = 0;
-            //benar = 0;
+            score = 100;
+            benar = 0;
+            salah = 0;
+            //hint = 0;
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
@@ -966,7 +974,6 @@ namespace SudokuWeekN
                     {
                         benar++;
                     }
-
                     //ini code mewarnai textbox ulang
                     if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
@@ -1216,13 +1223,11 @@ namespace SudokuWeekN
             }
         }
 
-
-        public static int score = 100;
         private void pictureBoxHint_Click(object sender, EventArgs e)
         {
             //INI CODE NYARI SUMBU X DAN Y  YANG AKTIF
             tbox[sumbux, sumbuy].Text = soal[sumbux, sumbuy];
-            score = score - 2;
+            hint += 2;
         }
         public int sumbux = 0;
         public int sumbuy = 0;
@@ -1236,9 +1241,6 @@ namespace SudokuWeekN
 
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
-            score = 0;
-            benar = 0;
-            salah = 0;
             FormGame f2 = new FormGame();
             f2.Show();
             this.Hide();
@@ -1251,14 +1253,14 @@ namespace SudokuWeekN
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    tbox[x, y].Text = soal[x, y];
                     if (tbox[x, y].Text != soal[x, y])
                     {
-                        salah = salah + 2;
+                        salah += 2;
                     }
+                    tbox[x, y].Text = soal[x, y];
                 }
             }
-            score = score - salah;
+            score = score - salah - hint;
         }
 
         private void pictureBoxClose1_Click(object sender, EventArgs e)
@@ -1268,6 +1270,18 @@ namespace SudokuWeekN
 
         private void pictureBoxEnd_Click(object sender, EventArgs e)
         {
+            score = 100;
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (tbox[x, y].Text == soal[x, y])
+                    {
+                        salah += 2;
+                    }
+                }
+            }
+            score = score - salah - hint;
             FormCongrats congrats = new FormCongrats();
             congrats.Show();
             this.Hide();

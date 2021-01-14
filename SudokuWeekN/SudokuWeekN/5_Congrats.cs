@@ -27,13 +27,16 @@ namespace SudokuWeekN
             this.Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
             FormLevel level = new FormLevel();
             level.Show();
             this.Hide();
         }
-        
-    
+
+        private void pictureBoxClose_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace SudokuWeekN
 
         public void pictureBoxEasy_Click(object sender, EventArgs e)
         {
-            level = 25;
+            level = 30;
             FormGame Game = new FormGame();
             Game.Show();
             this.Hide();
@@ -29,7 +29,7 @@ namespace SudokuWeekN
 
         public void pictureBoxMedium_Click(object sender, EventArgs e)
         {
-            level = 35;
+            level = 38;
             FormGame Game = new FormGame();
             Game.Show();
             this.Hide();
