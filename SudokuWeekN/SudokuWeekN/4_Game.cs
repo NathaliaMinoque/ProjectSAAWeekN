@@ -914,7 +914,7 @@ namespace SudokuWeekN
                 }
             }
 
-            while (counter != 25)
+            while (counter != FormLevel.level)
             {
                 //INI CODE BUAT LEVEL
                 counter = 0;
@@ -950,9 +950,13 @@ namespace SudokuWeekN
             }
         }
 
+        public int benar = 0;
+        public int salah = 0;
+
         private void textbox_KeyUp(object sender, KeyEventArgs e)
         {
-            int cek = 0;
+            //salah = 0;
+            //benar = 0;
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
@@ -960,8 +964,9 @@ namespace SudokuWeekN
                     //INI CODE CEK WIN
                     if (tbox[x, y].Text == soal[x, y])
                     {
-                        cek++;
+                        benar++;
                     }
+
                     //ini code mewarnai textbox ulang
                     if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
                     {
@@ -976,7 +981,7 @@ namespace SudokuWeekN
                 }
             }
             //INI CODE WIN
-            if (cek == 81)
+            if (benar == 81)
             {
                 FormCongrats congrats = new FormCongrats();
                 congrats.Show();             
@@ -1231,6 +1236,9 @@ namespace SudokuWeekN
 
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
+            score = 0;
+            benar = 0;
+            salah = 0;
             FormGame f2 = new FormGame();
             f2.Show();
             this.Hide();
@@ -1238,17 +1246,30 @@ namespace SudokuWeekN
 
         private void pictureBoxGiveUp_Click(object sender, EventArgs e)
         {
+            salah = 0;
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
                 {
                     tbox[x, y].Text = soal[x, y];
+                    if (tbox[x, y].Text != soal[x, y])
+                    {
+                        salah = salah + 2;
+                    }
                 }
             }
+            score = score - salah;
         }
 
         private void pictureBoxClose1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+        }
+
+        private void pictureBoxEnd_Click(object sender, EventArgs e)
+        {
+            FormCongrats congrats = new FormCongrats();
+            congrats.Show();
             this.Hide();
         }
     }

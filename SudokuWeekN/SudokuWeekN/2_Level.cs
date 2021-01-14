@@ -17,27 +17,29 @@ namespace SudokuWeekN
             InitializeComponent();
         }
 
+        public static int level = 0;
 
         public void pictureBoxEasy_Click(object sender, EventArgs e)
         {
-            FormGame Easy = new FormGame();
-            Easy.Show();
+            level = 25;
+            FormGame Game = new FormGame();
+            Game.Show();
             this.Hide();
-            
         }
 
         public void pictureBoxMedium_Click(object sender, EventArgs e)
         {
-
-            FormMedium Medium = new FormMedium();
-            Medium.Show();
+            level = 35;
+            FormGame Game = new FormGame();
+            Game.Show();
             this.Hide();
         }
 
         public void pictureBoxHard_Click(object sender, EventArgs e)
         {
-            FormHard Hard = new FormHard();
-            Hard.Show();
+            level = 45;
+            FormGame Game = new FormGame();
+            Game.Show();
             this.Hide();
         }
 
@@ -46,6 +48,16 @@ namespace SudokuWeekN
             FormRules rules = new FormRules();
             rules.Show();
             this.Hide();
+        }
+
+        private void FormLevel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxLevel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

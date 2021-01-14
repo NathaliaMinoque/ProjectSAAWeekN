@@ -33,10 +33,12 @@ namespace SudokuWeekN
             this.pictureBoxGiveUp = new System.Windows.Forms.PictureBox();
             this.pictureBoxRestart = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEnd = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGiveUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnd)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxHint
@@ -89,6 +91,17 @@ namespace SudokuWeekN
             this.pictureBoxClose1.TabStop = false;
             this.pictureBoxClose1.Click += new System.EventHandler(this.pictureBoxClose1_Click);
             // 
+            // pictureBoxEnd
+            // 
+            this.pictureBoxEnd.Image = global::SudokuWeekN.Properties.Resources._20210112_170832;
+            this.pictureBoxEnd.Location = new System.Drawing.Point(548, 369);
+            this.pictureBoxEnd.Name = "pictureBoxEnd";
+            this.pictureBoxEnd.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxEnd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEnd.TabIndex = 5;
+            this.pictureBoxEnd.TabStop = false;
+            this.pictureBoxEnd.Click += new System.EventHandler(this.pictureBoxEnd_Click);
+            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -96,6 +109,7 @@ namespace SudokuWeekN
             this.BackgroundImage = global::SudokuWeekN.Properties.Resources._20210110_131058_0000;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(819, 472);
+            this.Controls.Add(this.pictureBoxEnd);
             this.Controls.Add(this.pictureBoxClose1);
             this.Controls.Add(this.pictureBoxRestart);
             this.Controls.Add(this.pictureBoxGiveUp);
@@ -108,6 +122,7 @@ namespace SudokuWeekN
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGiveUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,5 +132,6 @@ namespace SudokuWeekN
         private System.Windows.Forms.PictureBox pictureBoxGiveUp;
         private System.Windows.Forms.PictureBox pictureBoxRestart;
         private System.Windows.Forms.PictureBox pictureBoxClose1;
+        private System.Windows.Forms.PictureBox pictureBoxEnd;
     }
 }

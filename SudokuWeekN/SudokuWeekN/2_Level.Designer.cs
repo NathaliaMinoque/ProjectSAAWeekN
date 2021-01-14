@@ -87,6 +87,7 @@ namespace SudokuWeekN
             this.pictureBoxLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLevel.TabIndex = 0;
             this.pictureBoxLevel.TabStop = false;
+            this.pictureBoxLevel.Click += new System.EventHandler(this.pictureBoxLevel_Click);
             // 
             // pictureBoxRules
             // 
@@ -112,6 +113,7 @@ namespace SudokuWeekN
             this.Controls.Add(this.pictureBoxLevel);
             this.Name = "FormLevel";
             this.Text = "Sudoku Week-N";
+            this.Load += new System.EventHandler(this.FormLevel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEasy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMedium)).EndInit();
