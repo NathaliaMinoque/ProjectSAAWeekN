@@ -19,6 +19,7 @@ namespace SudokuWeekN
 
         public TextBox[,] tbox = new TextBox[9, 9];
         public string[,] soal = new string[9, 9];
+        
        
         private void FormGame_Load(object sender, EventArgs e)
         {
@@ -956,7 +957,7 @@ namespace SudokuWeekN
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    //INI CODE WIN
+                    //INI CODE CEK WIN
                     if (tbox[x, y].Text == soal[x, y])
                     {
                         cek++;
@@ -974,10 +975,11 @@ namespace SudokuWeekN
                     }
                 }
             }
+            //INI CODE WIN
             if (cek == 81)
             {
                 FormCongrats congrats = new FormCongrats();
-                congrats.Show();
+                congrats.Show();             
                 this.Hide();
             }
             else
@@ -1209,10 +1211,13 @@ namespace SudokuWeekN
             }
         }
 
+
+        public static int score = 100;
         private void pictureBoxHint_Click(object sender, EventArgs e)
         {
             //INI CODE NYARI SUMBU X DAN Y  YANG AKTIF
             tbox[sumbux, sumbuy].Text = soal[sumbux, sumbuy];
+            score = score - 2;
         }
         public int sumbux = 0;
         public int sumbuy = 0;

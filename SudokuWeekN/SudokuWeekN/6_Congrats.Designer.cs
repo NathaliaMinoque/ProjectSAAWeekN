@@ -32,6 +32,7 @@ namespace SudokuWeekN
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.labelScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -72,11 +73,21 @@ namespace SudokuWeekN
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // labelScore
+            // 
+            this.labelScore.AutoSize = true;
+            this.labelScore.Location = new System.Drawing.Point(407, 281);
+            this.labelScore.Name = "labelScore";
+            this.labelScore.Size = new System.Drawing.Size(0, 20);
+            this.labelScore.TabIndex = 4;
+            this.labelScore.Click += new System.EventHandler(this.FormCongrats_Load);
+            // 
             // FormCongrats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelScore);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBoxClose);
             this.Controls.Add(this.pictureBox1);
@@ -87,6 +98,7 @@ namespace SudokuWeekN
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,5 +107,6 @@ namespace SudokuWeekN
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelScore;
     }
 }

@@ -19,7 +19,7 @@ namespace SudokuWeekN
 
         private void FormCongrats_Load(object sender, EventArgs e)
         {
-
+            labelScore.Text = FormGame.score.ToString();
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
@@ -33,5 +33,7 @@ namespace SudokuWeekN
             level.Show();
             this.Hide();
         }
+        
+    
     }
 }
