@@ -20,6 +20,8 @@ namespace SudokuWeekN
         private void FormCongrats_Load(object sender, EventArgs e)
         {
             labelScore.Text = FormGame.score.ToString();
+            label1.Text = FormGame.salah.ToString();
+            label2.Text = FormGame.hint.ToString();
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)

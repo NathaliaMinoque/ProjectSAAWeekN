@@ -19,9 +19,9 @@ namespace SudokuWeekN
 
         public TextBox[,] tbox = new TextBox[9, 9];
         public string[,] soal = new string[9, 9];
-        public int benar = 0;
-        public int salah = 0;
-        public int hint = 0;
+        public static int benar = 0;
+        public static int salah = 0;
+        public static int hint = 0;
         public static int score = 100;
 
 
@@ -1260,7 +1260,7 @@ namespace SudokuWeekN
                     tbox[x, y].Text = soal[x, y];
                 }
             }
-            score = score - salah - hint;
+            //score = score - salah - hint;
         }
 
         private void pictureBoxClose1_Click(object sender, EventArgs e)
@@ -1271,6 +1271,7 @@ namespace SudokuWeekN
         private void pictureBoxEnd_Click(object sender, EventArgs e)
         {
             score = 100;
+            salah = 0;
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
@@ -1281,7 +1282,7 @@ namespace SudokuWeekN
                     }
                 }
             }
-            score = score - salah - hint;
+            //score = score - salah - hint;
             FormCongrats congrats = new FormCongrats();
             congrats.Show();
             this.Hide();
