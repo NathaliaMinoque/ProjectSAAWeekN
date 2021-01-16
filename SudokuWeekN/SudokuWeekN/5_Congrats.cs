@@ -31,6 +31,11 @@ namespace SudokuWeekN
 
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
+            FormGame.benar = 0;
+            FormGame.salah = 0;
+            FormGame.hint = 0;
+            FormGame.giveup = 0;
+            FormGame.score = 100;
             FormLevel level = new FormLevel();
             level.Show();
             this.Hide();

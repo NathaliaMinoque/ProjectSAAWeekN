@@ -23,6 +23,9 @@ namespace SudokuWeekN
         public static int salah = 0;
         public static int hint = 0;
         public static int score = 100;
+        public static int giveup = 0;
+        public int sumbux = 0;
+        public int sumbuy = 0;
 
 
         private void FormGame_Load(object sender, EventArgs e)
@@ -1229,18 +1232,20 @@ namespace SudokuWeekN
             tbox[sumbux, sumbuy].Text = soal[sumbux, sumbuy];
             hint += 2;
         }
-        public int sumbux = 0;
-        public int sumbuy = 0;
         private void simpanposisiTboxHint_Enter(object sender, EventArgs e)
         {
             var tboxbariskolom = sender as TextBox;
             sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
-            sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
-            //MessageBox.Show(sumbux.ToString());           
+            sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));          
         }
 
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
+            benar = 0;
+            salah = 0;
+            hint = 0;
+            score = 100;
+            giveup = 0;
             FormGame f2 = new FormGame();
             f2.Show();
             this.Hide();
@@ -1249,6 +1254,7 @@ namespace SudokuWeekN
         private void pictureBoxGiveUp_Click(object sender, EventArgs e)
         {
             salah = 0;
+            giveup = 1;
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
@@ -1260,7 +1266,6 @@ namespace SudokuWeekN
                     tbox[x, y].Text = soal[x, y];
                 }
             }
-            //score = score - salah - hint;
         }
 
         private void pictureBoxClose1_Click(object sender, EventArgs e)
@@ -1270,19 +1275,25 @@ namespace SudokuWeekN
 
         private void pictureBoxEnd_Click(object sender, EventArgs e)
         {
-            score = 100;
-            salah = 0;
-            for (int x = 0; x < 9; x++)
+            if (giveup == 1)
             {
-                for (int y = 0; y < 9; y++)
+                score = score - salah - hint;
+            }
+            else if (giveup == 0)
+            {
+                salah = 0;
+                for (int x = 0; x < 9; x++)
                 {
-                    if (tbox[x, y].Text == soal[x, y])
+                    for (int y = 0; y < 9; y++)
                     {
-                        salah += 2;
+                        if (tbox[x, y].Text != soal[x, y])
+                        {
+                            salah += 2;
+                        }
                     }
                 }
+                score = score - salah - hint;
             }
-            //score = score - salah - hint;
             FormCongrats congrats = new FormCongrats();
             congrats.Show();
             this.Hide();
