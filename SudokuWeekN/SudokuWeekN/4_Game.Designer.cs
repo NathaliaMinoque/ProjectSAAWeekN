@@ -49,7 +49,7 @@ namespace SudokuWeekN
             this.pictureBoxHint.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_08_09_43_38;
             this.pictureBoxHint.Location = new System.Drawing.Point(612, 56);
             this.pictureBoxHint.Name = "pictureBoxHint";
-            this.pictureBoxHint.Size = new System.Drawing.Size(132, 112);
+            this.pictureBoxHint.Size = new System.Drawing.Size(136, 115);
             this.pictureBoxHint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxHint.TabIndex = 1;
             this.pictureBoxHint.TabStop = false;
@@ -63,7 +63,7 @@ namespace SudokuWeekN
             this.pictureBoxGiveUp.Image = global::SudokuWeekN.Properties.Resources.PicsArt_01_08_09_42_53;
             this.pictureBoxGiveUp.Location = new System.Drawing.Point(612, 183);
             this.pictureBoxGiveUp.Name = "pictureBoxGiveUp";
-            this.pictureBoxGiveUp.Size = new System.Drawing.Size(132, 107);
+            this.pictureBoxGiveUp.Size = new System.Drawing.Size(136, 110);
             this.pictureBoxGiveUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGiveUp.TabIndex = 2;
             this.pictureBoxGiveUp.TabStop = false;
@@ -108,7 +108,7 @@ namespace SudokuWeekN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SudokuWeekN.Properties.Resources._20210110_131058_0000;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(819, 472);
+            this.ClientSize = new System.Drawing.Size(823, 475);
             this.Controls.Add(this.pictureBoxEnd);
             this.Controls.Add(this.pictureBoxClose1);
             this.Controls.Add(this.pictureBoxRestart);
