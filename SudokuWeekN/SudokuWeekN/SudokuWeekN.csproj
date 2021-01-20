@@ -52,11 +52,11 @@
     <Compile Include="2_Level.Designer.cs">
       <DependentUpon>2_Level.cs</DependentUpon>
     </Compile>
-    <Compile Include="1_Start.cs">
+    <Compile Include="1_Opening.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="1_Start.Designer.cs">
-      <DependentUpon>1_Start.cs</DependentUpon>
+    <Compile Include="1_Opening.Designer.cs">
+      <DependentUpon>1_Opening.cs</DependentUpon>
     </Compile>
     <Compile Include="4_Game.cs">
       <SubType>Form</SubType>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="2_Level.resx">
       <DependentUpon>2_Level.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="1_Start.resx">
-      <DependentUpon>1_Start.cs</DependentUpon>
+    <EmbeddedResource Include="1_Opening.resx">
+      <DependentUpon>1_Opening.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="4_Game.resx">
       <DependentUpon>4_Game.cs</DependentUpon>

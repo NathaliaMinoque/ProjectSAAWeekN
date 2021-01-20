@@ -34,7 +34,7 @@ namespace SudokuWeekN
             benar = 0;
             salah = 0;
             hint = 0;
-            //Code buat nentuin paket soal           
+            //LIVIA Code buat nentuin paket soal           
             Random random = new Random();
             int tempsoal = random.Next(1, 10);          
             
@@ -889,7 +889,7 @@ namespace SudokuWeekN
                 soal[8, 8] = "5";
             }
 
-            //Ini codingan bikin textbox array   
+            //VANYA Ini codingan bikin textbox array   
             string nama;
             int counter = 0;
             
@@ -920,14 +920,13 @@ namespace SudokuWeekN
                     tbox[x, y].KeyUp += new KeyEventHandler(textbox_KeyUp);
                     tbox[x, y].KeyPress += new KeyPressEventHandler(textbox_KeyPress);
                     tbox[x, y].Enter += new EventHandler(simpanposisiTboxHint_Enter);
-
                    
                 }
             }
 
+            // WEDHANA INI CODE BUAT LEVEL
             while (counter != FormLevel.level)
-            {
-                //INI CODE BUAT LEVEL
+            {              
                 counter = 0;
                 for (int x = 0; x < 9; x++)
                 {
@@ -954,7 +953,7 @@ namespace SudokuWeekN
 
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //ini code biar yg masuk angka doang
+            //INEZ ini code biar yg masuk angka doang
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == '0')
             {
                 e.Handled = true;
@@ -968,11 +967,12 @@ namespace SudokuWeekN
             benar = 0;
             salah = 0;
             //hint = 0;
+            //
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    //INI CODE CEK WIN
+                    //MINOQ INI CODE CEK WIN
                     if (tbox[x, y].Text == soal[x, y])
                     {
                         benar++;
@@ -1226,19 +1226,23 @@ namespace SudokuWeekN
             }
         }
 
+        //WEDHANA NYARI POSISI AKTIF HINT
+        private void simpanposisiTboxHint_Enter(object sender, EventArgs e)
+        {
+            var tboxbariskolom = sender as TextBox;
+            sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
+            sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
+        }
+
         private void pictureBoxHint_Click(object sender, EventArgs e)
         {
             //INI CODE NYARI SUMBU X DAN Y  YANG AKTIF
             tbox[sumbux, sumbuy].Text = soal[sumbux, sumbuy];
             hint += 2;
         }
-        private void simpanposisiTboxHint_Enter(object sender, EventArgs e)
-        {
-            var tboxbariskolom = sender as TextBox;
-            sumbux = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(0, 1)));
-            sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));          
-        }
 
+
+       //LIVIA RESTART
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
             benar = 0;
@@ -1251,6 +1255,7 @@ namespace SudokuWeekN
             this.Hide();
         }
 
+        //VANYA GIVEUP
         private void pictureBoxGiveUp_Click(object sender, EventArgs e)
         {
             salah = 0;
@@ -1259,6 +1264,18 @@ namespace SudokuWeekN
             {
                 for (int y = 0; y < 9; y++)
                 {
+                    //diwarnai ulang mewarnai ulang
+                    if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
+                    {
+                        tbox[x, y].BackColor = Color.SkyBlue;
+                        tbox[x, y].ForeColor = Color.DarkSlateGray;
+                    }
+                    else
+                    {
+                        tbox[x, y].BackColor = Color.Orchid;
+                        tbox[x, y].ForeColor = Color.DarkSlateGray;
+                    }
+
                     if (tbox[x, y].Text != soal[x, y])
                     {
                         salah += 2;
@@ -1268,11 +1285,13 @@ namespace SudokuWeekN
             }
         }
 
+        //INEZ 
         private void pictureBoxClose1_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
+        //INEZ
         private void pictureBoxEnd_Click(object sender, EventArgs e)
         {
             if (giveup == 1)
