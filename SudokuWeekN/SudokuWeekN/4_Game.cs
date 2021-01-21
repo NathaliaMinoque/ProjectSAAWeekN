@@ -965,7 +965,6 @@ namespace SudokuWeekN
         {
             score = 100;
             benar = 0;
-            salah = 0;
             //hint = 0;
             //
             for (int x = 0; x < 9; x++)
@@ -993,6 +992,25 @@ namespace SudokuWeekN
             //INI CODE WIN
             if (benar == 81)
             {
+                if (giveup == 1)
+                {
+                    score = score - salah - hint;
+                }
+                else if (giveup == 0)
+                {
+                    salah = 0;
+                    for (int x = 0; x < 9; x++)
+                    {
+                        for (int y = 0; y < 9; y++)
+                        {
+                            if (tbox[x, y].Text != soal[x, y])
+                            {
+                                salah += 2;
+                            }
+                        }
+                    }
+                    score = score - salah - hint;
+                }
                 FormCongrats congrats = new FormCongrats();
                 congrats.Show();             
                 this.Hide();
