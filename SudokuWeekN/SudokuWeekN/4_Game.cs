@@ -36,8 +36,8 @@ namespace SudokuWeekN
             hint = 0;
             //LIVIA Code buat nentuin paket soal           
             Random random = new Random();
-            int tempsoal = random.Next(1, 10);          
-            
+            int tempsoal = random.Next(1, 10);
+
             if (tempsoal == 1)
             {
                 soal[0, 0] = "5";
@@ -1234,15 +1234,32 @@ namespace SudokuWeekN
             sumbuy = Convert.ToInt32(Convert.ToString(tboxbariskolom.Name.Substring(1, 1)));
         }
 
+        //WEDHANA HINT  
         private void pictureBoxHint_Click(object sender, EventArgs e)
         {
-            //INI CODE NYARI SUMBU X DAN Y  YANG AKTIF
+            //diwarnai ulang mewarnai ulang
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {                  
+                    if (x < 3 && y > 5 || x < 3 && y < 3 || x > 2 && x < 6 && y > 2 && y < 6 || x > 5 && y > 5 || x > 5 && y < 3)
+                    {
+                        tbox[x, y].BackColor = Color.SkyBlue;
+                        tbox[x, y].ForeColor = Color.DarkSlateGray;
+                    }
+                    else
+                    {
+                        tbox[x, y].BackColor = Color.Orchid;
+                        tbox[x, y].ForeColor = Color.DarkSlateGray;
+                    }
+                }
+            }
             tbox[sumbux, sumbuy].Text = soal[sumbux, sumbuy];
             hint += 2;
         }
 
 
-       //LIVIA RESTART
+        //LIVIA RESTART
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
             benar = 0;
@@ -1259,7 +1276,7 @@ namespace SudokuWeekN
         private void pictureBoxGiveUp_Click(object sender, EventArgs e)
         {
             salah = 0;
-            giveup = 1;
+            giveup = 1; //biar tau kalo dia udh melewati giveup
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
